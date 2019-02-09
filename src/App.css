@@ -1,0 +1,104 @@
+.col-centered {
+  display:inline-block;
+  float:none;
+  text-align:left;
+  margin-right:-4px;
+  text-align: center;
+  padding-top: 20px
+}
+.row-centered {
+ 
+}
+.line-center {
+  width: 1px;
+  height: auto;
+  background-color: #C5D2E0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.item-left {
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+  flex-direction: column;
+  padding-top: 10px;
+  justify-content: left;
+  align-items: flex-start;
+}
+.form-labelku {
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.input-company-form {
+  padding-bottom: 60px;
+  padding-top: 10px;
+}
+.line-horizontal {
+  width: auto;
+  background-color: #C5D2E0;
+  height: 1px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+.title {
+  margin-left: 12px;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.line-c {
+  width: auto;
+  height: 1px;
+  background-color: #C5D2E0;
+}
+.sub-title {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.text-bold {
+  font-size: 18px;
+  margin-top: 15px;
+  font-weight: 700;
+}
+.item-company {
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-top: 20px;
+  padding: 10px
+}
+i.fas.fa-times.icon {
+  font-size: 30px;
+}
+.detail-info{
+
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.react-phone-number-input__country--native {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  width: 100px;
+  align-items: center;
+  margin-right: 0.5em;
+  border: 1px solid #ced4da;;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  height: 37px;
+}
+.react-phone-number-input__input {
+ 
+  border-radius: 4px !important;
+  height: 37px !important;
+  padding-left: 8px !important;
+  border: 1px solid #C5D2E0 !important;
+
+}
