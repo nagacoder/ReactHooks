@@ -1,39 +1,63 @@
 import React from "react";
-import logo from "../logo.svg";
-import FormCompany from "../organisms/FormCompany";
-import FormOffice from "../organisms/FormOfiice";
-import CompanyList from "../organisms/CompaniesList";
 import OfficeLists from "../organisms/OfficesList";
+import { getState } from "../redux/store";
 
-function DetailCompany() {
+
+function DetailCompany(props) {
+  const [state, dispacth] = getState();
+  const office =
+    state.officeData !== undefined
+      ? state.officeData.list.length !== 0
+        ? state.officeData.list.filter(function(item) {
+            return Number(item.companyId) == props.data.id;
+          })
+        : []
+      : null;
+  function _backOverView() {
+    props.handleChange("home");
+  }
+
   return (
     <div className="row row-centered">
       <div className="col-12 ">
         <div className="card">
           <div className="row">
             <div className="col item-left">
-              <div className="title">Alibaba</div>
+              <div className="title">{props.data.name}</div>
             </div>
           </div>
 
           <div className="line-horizontal" />
           <div className="row">
-          <div className="col detail-info">
-            <div className="col-12 ">
-              <div className="text-bold">Address</div>
-              <div>160 Amphiteahtre Parkway Mountain View,</div>
-              <div>CA 0987568 united States</div>
+            <div className="col detail-info">
+              <div className="col-12 ">
+                <div className="text-bold">Address</div>
+                <div>{props.data.address}</div>
+  
+              </div>
+              <div className="col-12 ">
+                <div className="text-bold">Revenue</div>
+                <div>{props.data.revenue}</div>
+              </div>
+              <div className="col-12 ">
+                <div className="row">
+                  <div className="col ">
+                    <div className="text-bold">Phone</div>
+                    <div>{props.data.phone}</div>
+                  </div>
+                  <div className="col-5 ">
+                    <button
+                      type="button"
+                      onClick={() => _backOverView()}
+                      className="btn btn-primary btn-lg btn-block"
+                    >
+                      Back to Overview
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="col-12 ">
-              <div className="text-bold">Revenue</div>
-              <div>65780876</div>
-            </div>
-            <div className="col-12 ">
-              <div className="text-bold">Phone</div>
-              <div>(24)65780876</div>
-            </div>
-            </div>
-            </div>
+          </div>
           <div className="row">
             <div className="col item-left">
               <div className="title">Offices</div>
@@ -41,7 +65,24 @@ function DetailCompany() {
           </div>
           <div className="line-horizontal" />
           <div className="row ">
-            <OfficeLists/>
+            {office.length === 0 ? (
+              <div className="col-6 ">
+                <div className="item-company">
+                  <div className="col-12  ">
+                    <div className="card-title">
+                      <div className="text-bold">
+                        {" "}
+                        There is no companies created yet
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              office.map((data, i) => {
+                return <OfficeLists data={data} key={i} />;
+              })
+            )}
           </div>
         </div>
       </div>

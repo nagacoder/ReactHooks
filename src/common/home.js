@@ -1,16 +1,12 @@
-import React,{useEffect} from "react";
-import logo from "../logo.svg";
+import React from "react";
 import FormCompany from "../organisms/FormCompany";
 import FormOffice from "../organisms/FormOfiice";
 import CompanyList from "../organisms/CompaniesList";
 import {getState} from '../redux/store'
 
-function Home() {
+function Home(props) {
   const [state,dispatch] = getState()
-  useEffect(()=>{
-    console.log('ini')
-    console.log(state)
-  })
+  
   return (
     <div className="row row-centered">
       <div className="col-12 ">
@@ -27,11 +23,33 @@ function Home() {
             </div>
           </div>
           <div className="row ">
-          {state.companyData === undefined ? null:state.companyData.list.map((data,i)=>{
-            return <CompanyList data={data} key={i}/>
+          {state.companyData === undefined ? (
+            <div className="col-6 ">
+            
+            <div className="item-company">
+              <div className="col-12  ">
+                <div className="card-title">
+                  <div className="text-bold"> There is no companies created yet</div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          ): state.companyData.list.length === 0 ?(<div className="col-6 ">
+            
+          <div className="item-company">
+            <div className="col-12  ">
+              <div className="card-title">
+                <div className="text-bold"> There is no companies created yet</div>
+              </div>
+            </div>
+            
+          </div>
+        </div>) :state.companyData.list.map((data,i)=>{
+            return <CompanyList onViewDetail ={props.handleChange} data={data} key={i}/>
           })
             
-          }
+          } 
             
           </div>
         </div>

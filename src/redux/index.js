@@ -1,9 +1,13 @@
-import React from 'react'
-import {companyReducer} from './module/companyReducer'
-export const initialState = {
-    company:[]
-}
 
-export const reducer = ({companyData},action)=>({
-    companyData:companyReducer(companyData,action)
-})
+import { companyReducer } from "./module/companyReducer";
+import {officeReducer} from './module/officeReducer'
+export const initialState = {
+  company: [
+    
+  ]
+};
+
+export const reducer = ({ companyData ,officeData}, action) => ({
+  companyData: companyReducer(companyData, action),
+  officeData: officeReducer(officeData, action)
+});

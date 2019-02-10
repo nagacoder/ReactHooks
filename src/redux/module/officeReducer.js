@@ -1,22 +1,22 @@
-
-import {CREATE_COMPANY,DELETE_COMPANY} from '../action/company'
+import React from 'react'
+import {CREATE_OFFICE,DELETE_OFFICE} from '../action/office'
 const initialState ={
-    list :[]
+    list :[],
 }
-export const companyReducer = (state =initialState,action)=>{
+export const officeReducer = (state =initialState,action)=>{
+    console.log(action)
    
     switch(action.type){
-        case CREATE_COMPANY:
+        case CREATE_OFFICE:
         return {
             ...state,
             list:[...state.list,action.payload] 
         }
-        case DELETE_COMPANY:
+        case DELETE_OFFICE:
             return{
                 ...state,
                 list: state.list.filter(function(item) {
-                  
-                    return item.id != action.payload;
+                    return item.office_id != action.payload;
                 })
             }
         default:
