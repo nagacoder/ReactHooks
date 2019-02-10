@@ -19,7 +19,7 @@ function DetailCompany(props) {
 
   return (
     <div className="row row-centered">
-      <div className="col-12 ">
+      <div className="col-md-12 col-sm-12 ">
         <div className="card">
           <div className="row">
             <div className="col item-left">
@@ -45,7 +45,7 @@ function DetailCompany(props) {
                     <div className="text-bold">Phone</div>
                     <div>{props.data.phone}</div>
                   </div>
-                  <div className="col-5 ">
+                  <div className="col-md-5  col-sm-5">
                     <button
                       type="button"
                       onClick={() => _backOverView()}
@@ -66,7 +66,7 @@ function DetailCompany(props) {
           <div className="line-horizontal" />
           <div className="row ">
             {office.length === 0 ? (
-              <div className="col-6 ">
+              <div className="col-md-6  col-sm-12">
                 <div className="item-company">
                   <div className="col-12  ">
                     <div className="card-title">

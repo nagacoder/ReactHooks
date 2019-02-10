@@ -16,7 +16,7 @@ function CompanyList(props) {
     props.onViewDetail("detail-company",props.data);
   }
   return (
-    <div className="col-6 ">
+    <div className="col-md-6  col-sm-12">
       <Modal isOpen={modal}>
         <ModalHeader>Confirm</ModalHeader>
         <ModalBody>Are you sure to remove company?</ModalBody>
@@ -45,24 +45,24 @@ function CompanyList(props) {
         <i className="fas fa-times icon" onClick={() => openModal(!modal)} />
       </div>
       <div className="card item-company" onClick={() => _viewDetail()}>
-        <div className="col-12  ">
+        <div className="col-md-12  col-sm-12">
           <div className="card-title">
             <div className="sub-title">{props.data.name}</div>
           </div>
         </div>
-        <div className="col-12 ">
+        <div className="col-md-12 col-sm-12">
           <div className="line-c" />
         </div>
-        <div className="col-12 ">
+        <div className="col-md-12 col-sm-12">
           <div className="text-bold">Address</div>
           <div>{props.data.address}</div>
           <div>CA 0987568 united States</div>
         </div>
-        <div className="col-12 ">
+        <div className="col-md-12 col-sm-12">
           <div className="text-bold">Revenue</div>
           <div>{props.data.revenue}</div>
         </div>
-        <div className="col-12 ">
+        <div className="col-md-12 col-sm-12">
           <div className="text-bold">Phone</div>
           <div>{props.data.phone}</div>
         </div>

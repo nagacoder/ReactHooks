@@ -14,7 +14,7 @@ function OfficeLists(props) {
   }
 
   return (
-    <div className="col-6 ">
+    <div className="col-md-6 col-sm-12">
       <Modal isOpen={modal}>
         <ModalHeader>Confirm</ModalHeader>
         <ModalBody>Are you sure to remove Office ?</ModalBody>

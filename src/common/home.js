@@ -9,7 +9,7 @@ function Home(props) {
   
   return (
     <div className="row row-centered">
-      <div className="col-12 ">
+      <div className="col-md-12 col-sm-12 ">
         <div className="card">
           <div className="row">
             <FormCompany />
@@ -24,7 +24,7 @@ function Home(props) {
           </div>
           <div className="row ">
           {state.companyData === undefined ? (
-            <div className="col-6 ">
+            <div className="col-md-6 col-sm-12">
             
             <div className="item-company">
               <div className="col-12  ">
@@ -35,7 +35,7 @@ function Home(props) {
               
             </div>
           </div>
-          ): state.companyData.list.length === 0 ?(<div className="col-6 ">
+          ): state.companyData.list.length === 0 ?(<div className="col-md-6  col-sm-12">
             
           <div className="item-company">
             <div className="col-12  ">
